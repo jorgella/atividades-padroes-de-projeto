@@ -23,7 +23,7 @@ class RealizadorDeInvestimentosTest {
     void deveAdicionarOValorDescontadoImposto() {
         realizadorDeInvestimentos.resgataInvestimento(new BigDecimal("1000.00"));
 
-        // 1_000 * 0.8 = 8.00
+        // 1_000 * 0.008 = 8.00
         // 75% * 8.0 = 6.00
         // 1_000 + 6.00 = 1006.00
 
