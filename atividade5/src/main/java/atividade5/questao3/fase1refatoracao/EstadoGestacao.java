@@ -1,7 +1,5 @@
 package atividade5.questao3.fase1refatoracao;
 
-import atividade5.questao3.fase0procedural.MudancaDeEstadoNaoMapeadaException;
-
 public class EstadoGestacao implements EstadoDoProcesso {
 
     private final Processo processo;
@@ -43,4 +41,9 @@ public class EstadoGestacao implements EstadoDoProcesso {
         throw new MudancaDeEstadoNaoMapeadaException("Não pode recorrer processo em gestação");
     }
 
+
+    @Override
+    public String toString() {
+        return "Gestacao".toUpperCase();
+    }
 }

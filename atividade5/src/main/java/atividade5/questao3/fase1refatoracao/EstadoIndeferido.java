@@ -1,7 +1,5 @@
 package atividade5.questao3.fase1refatoracao;
 
-import atividade5.questao3.fase0procedural.MudancaDeEstadoNaoMapeadaException;
-
 public class EstadoIndeferido extends EstadoAvaliado {
 
     private final Processo processo;

@@ -1,10 +1,10 @@
 package atividade5.questao3.fase1refatoracao;
 
-public class EstadoEmRecurso implements EstadoDoProcesso {
+public class EstadoEmAvaliacao implements EstadoDoProcesso {
 
-    private final Processo processo;
+    private Processo processo;
 
-    public EstadoEmRecurso(Processo processo) {
+    public EstadoEmAvaliacao(Processo processo) {
         this.processo = processo;
     }
 
@@ -20,19 +20,21 @@ public class EstadoEmRecurso implements EstadoDoProcesso {
 
     @Override
     public void designarProcesso() throws MudancaDeEstadoNaoMapeadaException {
-        System.out.println("Estado antigo: " + this.processo.getEstado());
-        this.processo.setEstado(new EstadoEmAvaliacao(this.processo));
-        System.out.println("Novo estado: " + this.processo.getEstado());
+        throw new MudancaDeEstadoNaoMapeadaException("Não é possível designar enquanto o processo está no estado " + this);
     }
 
     @Override
     public void deferirProcesso() throws MudancaDeEstadoNaoMapeadaException {
-        throw new MudancaDeEstadoNaoMapeadaException("Não é possível deferir enquanto o processo está no estado " + this);
+        System.out.println("Estado antigo: " + this.processo.getEstado());
+        this.processo.setEstado(new EstadoDeferido(this.processo));
+        System.out.println("Novo estado: " + this.processo.getEstado());
     }
 
     @Override
     public void indeferirProcesso() throws MudancaDeEstadoNaoMapeadaException {
-        throw new MudancaDeEstadoNaoMapeadaException("Não é possível indeferir enquanto o processo está no estado " + this);
+        System.out.println("Estado antigo: " + this.processo.getEstado());
+        this.processo.setEstado(new EstadoIndeferido(this.processo));
+        System.out.println("Novo estado: " + this.processo.getEstado());
     }
 
     @Override
@@ -42,7 +44,6 @@ public class EstadoEmRecurso implements EstadoDoProcesso {
 
     @Override
     public String toString() {
-        return "EM_RECURSO";
+        return "EM_AVALIACAO";
     }
-
 }

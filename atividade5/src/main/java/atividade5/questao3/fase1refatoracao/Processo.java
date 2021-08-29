@@ -1,7 +1,5 @@
 package atividade5.questao3.fase1refatoracao;
 
-import atividade5.questao3.fase0procedural.MudancaDeEstadoNaoMapeadaException;
-
 import java.time.LocalDate;
 
 public class Processo {
@@ -14,6 +12,10 @@ public class Processo {
 
     protected Processo() {
 
+    }
+
+    public void setDataPrazoLegal(LocalDate dataPrazoLegal) {
+        this.dataPrazoLegal = dataPrazoLegal;
     }
 
     public EstadoDoProcesso getEstado() {
@@ -35,9 +37,9 @@ public class Processo {
     public static Processo criarNovoProcesso() {
         var processo = new Processo();
         processo.numeroProcesso = processoAtual++;
-//        processo.estadoDoProcesso = "GESTACAO";
-//        System.out.println("Criando Processo.");
-//        System.out.println("Estado inicial: " + processo.estadoDoProcesso);
+        processo.estado = new EstadoGestacao(processo);
+        System.out.println("Criando Processo.");
+        System.out.println("Estado inicial: " + processo.estado);
         return processo;
     }
 

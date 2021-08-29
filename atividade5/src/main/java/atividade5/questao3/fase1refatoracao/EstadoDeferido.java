@@ -1,7 +1,5 @@
 package atividade5.questao3.fase1refatoracao;
 
-import atividade5.questao3.fase0procedural.MudancaDeEstadoNaoMapeadaException;
-
 public class EstadoDeferido extends EstadoAvaliado {
 
     private static final String MESSAGE = "Processo número %s deferido. não há mudança de tramitação.";
@@ -42,4 +40,8 @@ public class EstadoDeferido extends EstadoAvaliado {
         throw new MudancaDeEstadoNaoMapeadaException(String.format(MESSAGE, processo.getNumeroProcesso()));
     }
 
+    @Override
+    public String toString() {
+        return "Deferido".toUpperCase();
+    }
 }
