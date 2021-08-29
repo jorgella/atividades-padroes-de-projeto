@@ -114,7 +114,7 @@ public class Processo {
 
     public void transcorrerAte(LocalDate data) {
         if (
-                ("EM_AVALIACAO".equals(this.estadoDoProcesso) || "INDEFERIDO".equals(this.estadoDoProcesso))
+                ("DEFERIDO".equals(this.estadoDoProcesso) || "INDEFERIDO".equals(this.estadoDoProcesso))
                         && data.isAfter(this.dataPrazoLegal)
         ) {
             System.out.println("Transcorrido período legal.");
