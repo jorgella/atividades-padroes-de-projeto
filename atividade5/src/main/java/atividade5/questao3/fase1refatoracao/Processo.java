@@ -76,7 +76,7 @@ public class Processo {
             System.out.println("Transcorrido período legal.");
             System.out.println("Alterando status para FECHADO.");
             System.out.println("Estado antigo: " + this.estado);
-            this.estado = new EstadoFechado();
+            this.estado = new EstadoFechado(this);
             System.out.println("Novo estado: " + this.estado);
         }
     }
