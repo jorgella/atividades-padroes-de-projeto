@@ -83,7 +83,7 @@ public class Processo {
         System.out.printf("Deferindo processo número %d.\n", this.numeroProcesso);
         if ("EM_AVALIACAO".equals(this.estadoDoProcesso)) {
             System.out.println("Estado antigo: " + this.estadoDoProcesso);
-            this.estadoDoProcesso = "FECHADO";
+            this.estadoDoProcesso = "DEFERIDO";
             System.out.println("Novo estado: " + this.estadoDoProcesso);
         } else {
             throw new MudancaDeEstadoNaoMapeadaException("Não é possível deferir enquanto o processo está no estado " + this.estadoDoProcesso);
