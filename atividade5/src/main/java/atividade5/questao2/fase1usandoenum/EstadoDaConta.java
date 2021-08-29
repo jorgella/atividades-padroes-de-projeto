@@ -1,8 +1,5 @@
 package atividade5.questao2.fase1usandoenum;
 
-import atividade5.questao2.fase2comclasses.Negativado;
-import atividade5.questao2.fase2comclasses.Positivado;
-
 enum EstadoDaConta {
 
     POSITIVADO {
